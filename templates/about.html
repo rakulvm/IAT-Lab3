@@ -1,36 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fictional University Club - About Us</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
-</head>
-<body>
-    <header>
-        <div class="branding">
-            <h3 class="typing">University Of Windsor</h3>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>About Our Club</h1>
-        <p>The Fictional University Club was founded to create a vibrant community where students can connect and grow. Over the years, we have achieved numerous milestones and continue to strive towards excellence.</p>
-        <h2>Our History</h2>
+{% extends 'base.html' %}
+
+{% block title %}About Us - Science Club{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <div class="content-wrapper">
+        <h1>About the Science Club</h1>
+        <h2>History and Founders</h2>
+        <p>The Science Club was founded in 2005 by Dr. Dan Wu, with the vision to inspire young minds in the field of science.</p>
+        <h2>Mission, Vision, and Goals</h2>
+        <p>Our mission is to provide a platform for students to explore their scientific curiosity and creativity.</p>
+        <p>Our vision is to be a leading club in fostering innovative scientific projects and nurturing future scientists.</p>
+        <p>Our goals include promoting scientific knowledge, supporting innovative projects, and recognizing student achievements.</p>
+        <h2>Innovations and Awards</h2>
         <ol>
-            <li>2010 - Club founded</li>
-            <li>2012 - First annual competition</li>
-            <li>2015 - Community service initiatives launched</li>
-            <li>2018 - Reached 1000 active members</li>
-            <li>2020 - Celebrated 10th anniversary</li>
+            <li>2010: Introduced the Annual Science Fair</li>
+            <li>2012: Won the National Science Club Award</li>
+            <li>2015: Launched the Innovation Hub</li>
+            <li>2018: Received the Excellence in Education Award</li>
+            <li>2021: Celebrated 15 years of scientific achievements</li>
         </ol>
-        <img src="{% static 'myapp/club_history.jpg' %}" alt="Club history image">
-    </main>
-</body>
-</html>
+        <blockquote>"The important thing is to never stop questioning." - Albert Einstein</blockquote>
+    </div>
+</section>
+{% endblock %}

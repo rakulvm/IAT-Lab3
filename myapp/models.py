@@ -10,6 +10,7 @@ class Publisher(models.Model):
     website = models.URLField()
     city = models.CharField(max_length=20, blank=True)
     country = models.CharField(default='USA', max_length=20)
+    address = models.CharField(max_length=200)
     def __str__(self):
         return self.name
 
@@ -53,7 +54,7 @@ class Order(models.Model):
         (0,'Purchase'),
         (1,'Borrow'),
     ]
-    books = models.ManyToManyField(Book, blank=True)
+    books = models.ManyToManyField(Book)
     member = models.ForeignKey(Member, on_delete=models.CASCADE)
     order_type = models.IntegerField(choices=STATUS_CHOICES,default=1)
     date = models.DateField(default=timezone.now)
